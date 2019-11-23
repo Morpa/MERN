@@ -8,15 +8,21 @@ import {
 
 import Users from "./users/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
+import UserPlaces from "./places/pages/UserPlaces";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={Users} />
-        <Route path="/places/new" exact component={NewPlace} />
-        <Redirect to="/" />
-      </Switch>
+      <MainNavigation />
+      <main>
+        <Switch>
+          <Route path="/" exact component={Users} />
+          <Route path="/:userId/places" exact component={UserPlaces} />
+          <Route path="/places/new" exact component={NewPlace} />
+          <Redirect to="/" />
+        </Switch>
+      </main>
     </Router>
   );
 }

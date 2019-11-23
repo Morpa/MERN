@@ -6,5 +6,3 @@
 ![](https://img.shields.io/github/languages/count/morpa/MERN.svg?color=lightgrey)
 ![](https://img.shields.io/github/languages/code-size/morpa/MERN.svg)
 ![](https://img.shields.io/github/repo-size/morpa/MERN.svg?color=blueviolet)
-![](https://david-dm.org/morpa/MERN.svg)
-![](https://david-dm.org/morpa/MERN/dev-status.svg)
