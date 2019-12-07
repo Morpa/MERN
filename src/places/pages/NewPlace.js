@@ -1,27 +1,27 @@
-import React from "react";
+import React from 'react';
 
-import Input from "../../shared/components/FormElements/Input";
-import Button from "../../shared/components/FormElements/Button";
+import Input from '../../shared/components/FormElements/Input';
+import Button from '../../shared/components/FormElements/Button';
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH
-} from "../../shared/utils/validators";
-import { useForm } from "../../shared/hooks/form-hook";
-import "./PlaceForm.css";
+} from '../../shared/util/validators';
+import { useForm } from '../../shared/hooks/form-hook';
+import './PlaceForm.css';
 
 const NewPlace = () => {
   const [formState, inputHandler] = useForm(
     {
       title: {
-        value: "",
+        value: '',
         isValid: false
       },
       description: {
-        value: "",
+        value: '',
         isValid: false
       },
       address: {
-        value: "",
+        value: '',
         isValid: false
       }
     },
@@ -30,8 +30,7 @@ const NewPlace = () => {
 
   const placeSubmitHandler = event => {
     event.preventDefault();
-
-    console.log(formState.inputs); // send this to backend
+    console.log(formState.inputs); // send this to the backend!
   };
 
   return (
