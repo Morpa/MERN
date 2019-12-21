@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from 'react';
 
-import Button from "./Button";
-import "./ImageUpload.css";
+import Button from './Button';
+import './ImageUpload.css';
 
 const ImageUpload = props => {
   const [file, setFile] = useState();
@@ -45,12 +45,12 @@ const ImageUpload = props => {
       <input
         id={props.id}
         ref={filePickerRef}
-        style={{ display: "none" }}
+        style={{ display: 'none' }}
         type="file"
         accept=".jpg,.png,.jpeg"
         onChange={pickedHandler}
       />
-      <div className={`image-upload ${props.center && "center"}`}>
+      <div className={`image-upload ${props.center && 'center'}`}>
         <div className="image-upload__preview">
           {previewUrl && <img src={previewUrl} alt="Preview" />}
           {!previewUrl && <p>Please pick an image.</p>}

@@ -4,7 +4,7 @@ let logoutTimer;
 
 export const useAuth = () => {
   const [token, setToken] = useState(false);
-  const [tokenExpirationDate, setTokenExpirationDate] = useState(); //não tem relacao com const abaixo
+  const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const [userId, setUserId] = useState(false);
 
   const login = useCallback((uid, token, expirationDate) => {
@@ -32,8 +32,7 @@ export const useAuth = () => {
 
   useEffect(() => {
     if (token && tokenExpirationDate) {
-      const remainingTime =
-        tokenExpirationDate.getTime() - new Date().getTime();
+      const remainingTime = tokenExpirationDate.getTime() - new Date().getTime();
       logoutTimer = setTimeout(logout, remainingTime);
     } else {
       clearTimeout(logoutTimer);
@@ -47,11 +46,7 @@ export const useAuth = () => {
       storedData.token &&
       new Date(storedData.expiration) > new Date()
     ) {
-      login(
-        storedData.userId,
-        storedData.token,
-        new Date(storedData.expiration)
-      );
+      login(storedData.userId, storedData.token, new Date(storedData.expiration));
     }
   }, [login]);
 

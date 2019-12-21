@@ -82,7 +82,7 @@ const UpdatePlace = () => {
 
   if (isLoading) {
     return (
-      <div className='center'>
+      <div className="center">
         <LoadingSpinner />
       </div>
     );
@@ -90,7 +90,7 @@ const UpdatePlace = () => {
 
   if (!loadedPlace && !error) {
     return (
-      <div className='center'>
+      <div className="center">
         <Card>
           <h2>Could not find place!</h2>
         </Card>
@@ -102,29 +102,29 @@ const UpdatePlace = () => {
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
       {!isLoading && loadedPlace && (
-        <form className='place-form' onSubmit={placeUpdateSubmitHandler}>
+        <form className="place-form" onSubmit={placeUpdateSubmitHandler}>
           <Input
-            id='title'
-            element='input'
-            type='text'
-            label='Title'
+            id="title"
+            element="input"
+            type="text"
+            label="Title"
             validators={[VALIDATOR_REQUIRE()]}
-            errorText='Please enter a valid title.'
+            errorText="Please enter a valid title."
             onInput={inputHandler}
             initialValue={loadedPlace.title}
             initialValid={true}
           />
           <Input
-            id='description'
-            element='textarea'
-            label='Description'
+            id="description"
+            element="textarea"
+            label="Description"
             validators={[VALIDATOR_MINLENGTH(5)]}
-            errorText='Please enter a valid description (min. 5 characters).'
+            errorText="Please enter a valid description (min. 5 characters)."
             onInput={inputHandler}
             initialValue={loadedPlace.description}
             initialValid={true}
           />
-          <Button type='submit' disabled={!formState.isValid}>
+          <Button type="submit" disabled={!formState.isValid}>
             UPDATE PLACE
           </Button>
         </form>

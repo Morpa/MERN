@@ -23,34 +23,34 @@ const App = () => {
   if (token) {
     routes = (
       <Switch>
-        <Route path='/' exact>
+        <Route path="/" exact>
           <Users />
         </Route>
-        <Route path='/:userId/places' exact>
+        <Route path="/:userId/places" exact>
           <UserPlaces />
         </Route>
-        <Route path='/places/new' exact>
+        <Route path="/places/new" exact>
           <NewPlace />
         </Route>
-        <Route path='/places/:placeId'>
+        <Route path="/places/:placeId">
           <UpdatePlace />
         </Route>
-        <Redirect to='/' />
+        <Redirect to="/" />
       </Switch>
     );
   } else {
     routes = (
       <Switch>
-        <Route path='/' exact>
+        <Route path="/" exact>
           <Users />
         </Route>
-        <Route path='/:userId/places' exact>
+        <Route path="/:userId/places" exact>
           <UserPlaces />
         </Route>
-        <Route path='/auth'>
+        <Route path="/auth">
           <Auth />
         </Route>
-        <Redirect to='/auth' />
+        <Redirect to="/auth" />
       </Switch>
     );
   }
@@ -63,7 +63,8 @@ const App = () => {
         userId: userId,
         login: login,
         logout: logout
-      }}>
+      }}
+    >
       <Router>
         <MainNavigation />
         <main>{routes}</main>
